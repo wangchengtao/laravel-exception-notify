@@ -1,5 +1,5 @@
 {
-    "name": "hicoopay/laravel-exception-notify",
+    "name": "summer/laravel-exception-notify",
     "description": "laravel 框架适配异常监控通知, 支持钉钉群机器人, 飞书群机器人以及自定义通道",
     "keywords": [
         "laravel", "exception", "notify", "dingtalk", "feishu"
@@ -12,28 +12,19 @@
     ],
     "require": {
         "php": ">=7.2",
-        "hicoopay/exception-notify": "dev-master",
+        "summer/exception-notify": "dev-master",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
     },
     "autoload": {
         "psr-4": {
-            "Hicoopay\\LaravelExceptionNotify\\": "src/"
+            "Summer\\LaravelExceptionNotify\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Hicoopay\\LaravelExceptionNotify\\ExceptionNotifyServiceProvider"
+                "Summer\\LaravelExceptionNotify\\ExceptionNotifyServiceProvider"
             ]
         }
-    },
-    "config": {
-        "secure-http": false
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "http://gitlab.mayihaike.xyz:9091/hicoopay/exception-notify.git"
-        }
-    ]
+    }
 }

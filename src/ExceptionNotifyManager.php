@@ -1,9 +1,9 @@
 <?php
 
-namespace Hicoopay\LaravelExceptionNotify;
+namespace Summer\LaravelExceptionNotify;
 
-use Hicoopay\ExceptionNotify\Channel\AbstractChannel;
-use Hicoopay\ExceptionNotify\Message\AbstractMessage;
+use Summer\ExceptionNotify\Channel\AbstractChannel;
+use Summer\ExceptionNotify\Message\AbstractMessage;
 use Illuminate\Contracts\Foundation\Application;
 use InvalidArgumentException;
 
@@ -15,7 +15,7 @@ class ExceptionNotifyManager
     protected $app;
 
     /**
-     * @var \Hicoopay\ExceptionNotify\Channel\AbstractChannel
+     * @var \Summer\ExceptionNotify\Channel\AbstractChannel
      */
     protected $channel;
 

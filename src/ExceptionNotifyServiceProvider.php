@@ -1,6 +1,6 @@
 <?php
 
-namespace Hicoopay\LaravelExceptionNotify;
+namespace Summer\LaravelExceptionNotify;
 
 use Illuminate\Support\ServiceProvider;
 
