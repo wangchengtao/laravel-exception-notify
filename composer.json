@@ -1,5 +1,5 @@
 {
-    "name": "summer/laravel-exception-notify",
+    "name": "wangchengtao/laravel-exception-notify",
     "description": "laravel 框架适配异常监控通知, 支持钉钉群机器人, 飞书群机器人以及自定义通道",
     "keywords": [
         "laravel", "exception", "notify", "dingtalk", "feishu"
@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": ">=7.2",
-        "summer/exception-notify": "dev-master",
-        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
+        "wangchengtao/exception-notify": "dev-master",
+        "illuminate/support": "^6.0 | ^7.0 | ^8.0 | ^9.0 | ^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -24,7 +24,10 @@
         "laravel": {
             "providers": [
                 "Summer\\LaravelExceptionNotify\\ExceptionNotifyServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Notify": "Summer\\LaravelExceptionNotify\\Notify"
+            }
         }
     }
 }

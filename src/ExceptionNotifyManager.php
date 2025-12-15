@@ -15,9 +15,9 @@ class ExceptionNotifyManager
     protected $app;
 
     /**
-     * @var \Summer\ExceptionNotify\Channel\AbstractChannel
+     * @var array<string, AbstractChannel>
      */
-    protected $channel;
+    protected $channels;
 
     public function __construct(Application $app)
     {
@@ -28,7 +28,7 @@ class ExceptionNotifyManager
     {
         $name = $name ?? $this->getDefaultChannel();
 
-        return $this->resolve($name);
+        return $this->channels[$name] ?? $this->resolve($name);
     }
 
     protected function getDefaultChannel(): string
@@ -40,7 +40,7 @@ class ExceptionNotifyManager
     {
         $config = $this->getConfig($name);
 
-        return $this->channel = new $config['driver']($config);
+        return $this->channels[$name] = new $config['driver']($config);
     }
 
     protected function getConfig(string $name): array
@@ -54,7 +54,6 @@ class ExceptionNotifyManager
 
     public function send(AbstractMessage $message): void
     {
-        $res = $this->channel()->send($message);
-        $this->channel->handleResponse($res);
+         $this->channel()->send($message);
     }
 }
