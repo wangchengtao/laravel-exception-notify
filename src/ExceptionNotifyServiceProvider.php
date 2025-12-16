@@ -9,7 +9,7 @@ class ExceptionNotifyServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/message.php' => config_path('message.php'),
+            __DIR__ . '/../config/message.php' => config_path('message.php'),
         ]);
     }
 }
