@@ -42,7 +42,7 @@ Notify::send($text);
 ```
 
 ## 效果图
-![效果图](./img.png)
+![效果图](assets/img.png)
 
 ## 自定义通道
 * 所有自定义通道继承自 `AbstractChannel`
