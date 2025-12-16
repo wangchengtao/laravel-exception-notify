@@ -11,11 +11,26 @@
 
 ## 安装
 ```bash
-composer require wangchengtao/exception-notify
+composer require wangchengtao/laravel-exception-notify
+```
+
+## 配置
+1. 创建配置文件:
+```shell
+php artisan vendor:publish --provider="Summer\LaravelExceptionNotify\ExceptionNotifyServiceProvider"
+```
+
+2. 可选, 添加别名
+```php
+'aliases' => [
+    // ...
+    'Notify' => Summer\LaravelExceptionNotify\Notify::class,
+],
 ```
 
 ## 使用
 ```php
+use Summer\LaravelExceptionNotify\Notify;
 
 $text = new DingtalkText();
 $text->setTitle('测试');
