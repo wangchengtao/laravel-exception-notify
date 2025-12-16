@@ -10,7 +10,7 @@
 
 ## 安装
 ```bash
-composer require wangchengtao/laravel-exception-notify:dev-master
+composer require wangchengtao/laravel-exception-notify:^1.0
 ```
 
 ## 配置
