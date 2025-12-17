@@ -1,8 +1,7 @@
 <?php
 
-
 return [
-    'default' => 'dingtalk',
+    'default' => env('NOTIFY_DEFAULT_CHANNEL', 'dingtalk'),
     'channels' => [
         'dingtalk' => [
             'driver' => Summer\ExceptionNotify\Channel\Dingtalk::class,
