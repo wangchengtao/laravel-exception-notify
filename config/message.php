@@ -10,6 +10,7 @@ return [
             'auth_type' => env('DINGTALK_AUTH_TYPE', 'keyword'), // keyword | sign
             'keyword' => env('DINGTALK_KEYWORD', 'your keyword'), // When the type is keyword, this refers to the keyword added to the bot.
             'secret' => env('DINGTALK_SECRET', 'your secret'), // When the type is sign, this refers to the secret adding the bot.
+            'at' => explode(',', env('DINGTALK_AT', '')), // At who
         ],
         'feishu' => [
             'driver' => Summer\ExceptionNotify\Channel\Feishu::class,
