@@ -5,26 +5,17 @@
 * 支持扩展自定义通道
 
 ## 环境要求
-* php: >= 7.2
 * laravel >= 6.0
 
 ## 安装
 ```bash
-composer require wangchengtao/laravel-exception-notify:^1.0
+composer require wangchengtao/laravel-exception-notify
 ```
 
 ## 配置
 1. 创建配置文件:
 ```shell
 php artisan vendor:publish --provider="Summer\LaravelExceptionNotify\ExceptionNotifyServiceProvider"
-```
-
-2. 可选, 添加别名
-```php
-'aliases' => [
-    // ...
-    'Notify' => Summer\LaravelExceptionNotify\Notify::class,
-],
 ```
 
 ## 使用
