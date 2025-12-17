@@ -4,6 +4,7 @@
     "keywords": [
         "laravel", "exception", "notify", "dingtalk", "feishu"
     ],
+    "license": "MIT",
     "authors": [
         {
             "name": "wangchengtao",
