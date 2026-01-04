@@ -36,7 +36,7 @@ Notify::send($text);
 // markdown 格式
 $markdown = new DingtalkMarkdown();
 $markdown->setTitle('Markdown消息标题');
-$markdown->setContent('#### 这是Markdown消息内容 \n ![图片](https://example.com/image.png)');
+$markdown->setContent("#### 这是Markdown消息内容 \n ![图片](https://example.com/image.png)");
 $markdown->atAll();
 
 Notify::send($markdown);
