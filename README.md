@@ -1,7 +1,7 @@
 ## 消息通知组件
 
 ## 功能
-* 支持多种通道(钉钉群机器人 飞书群机器人 企业微信群机器人)
+* 支持多种通道(钉钉群机器人 飞书群机器人)
 * 支持扩展自定义通道
 
 ## 环境要求
@@ -17,6 +17,7 @@ composer require wangchengtao/laravel-exception-notify
 ```shell
 php artisan vendor:publish --provider="Summer\LaravelExceptionNotify\ExceptionNotifyServiceProvider"
 ```
+2. 修改 `config/message.php` 中对应的参数即可
 
 ## 使用
 ```php
@@ -76,9 +77,27 @@ class CustomMessage extends AbstractMessage
     }
 }
 
+```
+在 `config/message.php` 中添加相应配置
+```php
+return [
+    'default' => env('NOTIFY_DEFAULT_CHANNEL', 'dingtalk'),
+    'channels' => [
+        // 已省略其它配置
+        'custom' => [
+            'driver' => CustomChannel::class,
+            //
+        ],
+    ],
+];
+
+```
+
+发送消息
+```php
 $message = new CustomMessage();
 $message->setTitle('自定义标题');
 $message->setContent('自定义消息');
 
-Notify::channel(CustomChannel::class)->send($message);
+Notify::channel('custom')->send($message);
 ```

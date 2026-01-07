@@ -2,6 +2,7 @@
 
 namespace Summer\LaravelExceptionNotify;
 
+use Closure;
 use Summer\ExceptionNotify\Channel\AbstractChannel;
 use Summer\ExceptionNotify\Message\AbstractMessage;
 use Illuminate\Contracts\Foundation\Application;
@@ -28,7 +29,7 @@ class ExceptionNotifyManager
     {
         $name = $name ?? $this->getDefaultChannel();
 
-        return $this->channels[$name] ?? $this->resolve($name);
+        return $this->channels[$name] = $this->channels[$name] ?? $this->resolve($name);
     }
 
     protected function getDefaultChannel(): string
@@ -55,5 +56,10 @@ class ExceptionNotifyManager
     public function send(AbstractMessage $message): void
     {
          $this->channel()->send($message);
+    }
+
+    public function extend(string $name, Closure $callback): void
+    {
+        $this->channels[$name] = $callback($this->app, $this->getConfig($name));
     }
 }
