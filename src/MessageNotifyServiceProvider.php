@@ -1,10 +1,10 @@
 <?php
 
-namespace Summer\LaravelExceptionNotify;
+namespace Summer\LaravelMessageNotify;
 
 use Illuminate\Support\ServiceProvider;
 
-class ExceptionNotifyServiceProvider extends ServiceProvider
+class MessageNotifyServiceProvider extends ServiceProvider
 {
     public function boot()
     {

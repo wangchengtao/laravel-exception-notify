@@ -1,14 +1,14 @@
 <?php
 
-namespace Summer\LaravelExceptionNotify;
+namespace Summer\LaravelMessageNotify;
 
 use Closure;
-use Summer\ExceptionNotify\Channel\AbstractChannel;
-use Summer\ExceptionNotify\Message\AbstractMessage;
+use Summer\MessageNotify\Channel\AbstractChannel;
+use Summer\MessageNotify\Message\AbstractMessage;
 use Illuminate\Contracts\Foundation\Application;
 use InvalidArgumentException;
 
-class ExceptionNotifyManager
+class MessageNotifyManager
 {
     /**
      * @var \Illuminate\Contracts\Foundation\Application

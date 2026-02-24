@@ -9,20 +9,20 @@
 
 ## 安装
 ```bash
-composer require wangchengtao/laravel-exception-notify
+composer require wangchengtao/laravel-message-notify
 ```
 
 ## 配置
 1. 创建配置文件:
 ```shell
-php artisan vendor:publish --provider="Summer\LaravelExceptionNotify\ExceptionNotifyServiceProvider"
+php artisan vendor:publish --provider="Summer\LaravelMessageNotify\MessageNotifyServiceProvider"
 ```
 2. 修改 `config/message.php` 中对应的参数即可
 
 ## 使用
 ```php
-use Summer\ExceptionNotify\Message\Dingtalk\DingtalkMarkdown;
-use Summer\LaravelExceptionNotify\Notify;
+use Summer\MessageNotify\Message\Dingtalk\DingtalkMarkdown;
+use Summer\LaravelMessageNotify\Notify;
 
 // 文本格式
 $text = new DingtalkText();
@@ -52,9 +52,9 @@ Notify::send($markdown);
 * 所有自定义消息继承自 `AbstractMessage`
 
 ```php
-use Summer\ExceptionNotify\Channel\AbstractChannel;
-use Summer\ExceptionNotify\Message\AbstractMessage;
-use Summer\LaravelExceptionNotify\Notify;
+use Summer\MessageNotify\Channel\AbstractChannel;
+use Summer\MessageNotify\Message\AbstractMessage;
+use Summer\LaravelMessageNotify\Notify;
 
 class CustomChannel extends AbstractChannel
 {
